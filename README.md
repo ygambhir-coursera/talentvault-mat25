@@ -19,6 +19,7 @@ A modern, responsive portfolio and career platform built with HTML, CSS, and Jav
 - Showcase your projects and work
 - Integration with popular platforms
 - Project statistics and views
+- **TalentVault Skill Badges**: LinkedIn-style skill badges with TalentVault branding
 
 ### 🔍 **Job Search**
 - AI-powered job recommendations
@@ -75,8 +76,8 @@ The platform is fully responsive and optimized for:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/portfolio-platform.git
-   cd portfolio-platform
+   git clone https://github.com/ygambhir-coursera/talentvault-mat25.git
+   cd talentvault-mat25
    ```
 
 2. Open with a local server (recommended):
@@ -96,7 +97,7 @@ The platform is fully responsive and optimized for:
 ### File Structure
 
 ```
-portfolio-platform/
+talentvault-mat25/
 ├── index.html              # Homepage
 ├── styles.css              # Global styles
 ├── script.js               # Global JavaScript
@@ -165,7 +166,7 @@ The platform uses CSS custom properties for easy theming:
 1. Push your code to GitHub
 2. Go to repository Settings > Pages
 3. Select source branch (usually `main`)
-4. Your site will be available at `https://yourusername.github.io/portfolio-platform`
+4. Your site will be available at `https://ygambhir-coursera.github.io/talentvault-mat25`
 
 ### Other Hosting Options
 - **Netlify**: Drag and drop deployment
@@ -212,4 +213,4 @@ For support, questions, or suggestions:
 
 ---
 
-**Built with ❤️ by the TalentVault Team** 
+**Built with ❤️ by the TalentVault Team**
