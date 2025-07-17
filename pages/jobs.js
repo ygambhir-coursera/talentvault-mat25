@@ -14,13 +14,27 @@ let jobsData = {
 // Initialize jobs when page loads
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🚀 Jobs page initializing...');
-    initializeJobs();
-    setupEventListeners();
+    try {
+        initializeJobs();
+        setupEventListeners();
+        console.log('✅ Jobs page initialized successfully');
+    } catch (error) {
+        console.error('❌ Error initializing jobs:', error);
+    }
 });
 
 // Initialize jobs with sample data
 function initializeJobs() {
     console.log('📊 Loading job data...');
+    
+    // Check if required DOM elements exist
+    const perfectMatchesGrid = document.getElementById('perfect-matches-grid');
+    const otherJobsGrid = document.getElementById('other-jobs-grid');
+    
+    if (!perfectMatchesGrid || !otherJobsGrid) {
+        console.error('❌ Required DOM elements not found');
+        return;
+    }
     
     // Create realistic job data with proper sources
     jobsData.allJobs = [
@@ -157,6 +171,19 @@ function initializeJobs() {
     // Load jobs initially (profile-relevant)
     loadJobs();
     updateHelpText();
+    
+    // Fallback: ensure jobs are visible
+    setTimeout(() => {
+        const perfectMatchesGrid = document.getElementById('perfect-matches-grid');
+        const otherJobsGrid = document.getElementById('other-jobs-grid');
+        
+        if (perfectMatchesGrid && otherJobsGrid) {
+            if (perfectMatchesGrid.innerHTML.trim() === '' && otherJobsGrid.innerHTML.trim() === '') {
+                console.log('🔄 Fallback: Re-attempting to load jobs...');
+                loadJobs();
+            }
+        }
+    }, 1000);
 }
 
 // Setup event listeners
@@ -176,20 +203,25 @@ function setupEventListeners() {
 function loadJobs(filters = {}) {
     console.log('📋 Loading jobs with filters:', filters);
     
-    showLoading(true);
-    
-    // Apply filters
-    jobsData.filteredJobs = applyFilters(jobsData.allJobs, filters);
-    
-    // Render jobs
-    renderJobs(jobsData.filteredJobs);
-    
-    // Update stats
-    updateStats(jobsData.filteredJobs);
-    
-    showLoading(false);
-    
-    console.log(`✅ Loaded ${jobsData.filteredJobs.length} jobs`);
+    try {
+        showLoading(true);
+        
+        // Apply filters
+        jobsData.filteredJobs = applyFilters(jobsData.allJobs, filters);
+        
+        // Render jobs
+        renderJobs(jobsData.filteredJobs);
+        
+        // Update stats
+        updateStats(jobsData.filteredJobs);
+        
+        showLoading(false);
+        
+        console.log(`✅ Loaded ${jobsData.filteredJobs.length} jobs`);
+    } catch (error) {
+        console.error('❌ Error loading jobs:', error);
+        showLoading(false);
+    }
 }
 
 // Apply filters to jobs
@@ -232,6 +264,8 @@ function applyFilters(jobs, filters) {
 
 // Render jobs on the page
 function renderJobs(jobs) {
+    console.log('🎨 Rendering jobs:', jobs.length);
+    
     const perfectMatchesGrid = document.getElementById('perfect-matches-grid');
     const otherJobsGrid = document.getElementById('other-jobs-grid');
     
@@ -424,9 +458,13 @@ function formatJobDate(date) {
 }
 
 function showLoading(show) {
-    const loadingIndicator = document.getElementById('loading-indicator');
-    if (loadingIndicator) {
-        loadingIndicator.style.display = show ? 'block' : 'none';
+    try {
+        const loadingIndicator = document.getElementById('loading-indicator');
+        if (loadingIndicator) {
+            loadingIndicator.style.display = show ? 'block' : 'none';
+        }
+    } catch (error) {
+        console.error('❌ Error showing loading indicator:', error);
     }
 }
 
