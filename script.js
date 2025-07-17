@@ -1325,3 +1325,130 @@ function addDynamicStyles() {
     `;
     document.head.appendChild(style);
 };
+
+// Profile sharing functionality (used on dashboard)
+function shareProfile() {
+    const profileUrl = `${window.location.origin}/pages/profile.html`;
+    
+    // Create share options modal
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-share"></i> Share Profile</h3>
+                <button class="close-btn" onclick="closeModal(this)">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">Choose how you'd like to share your profile:</p>
+                <div class="share-options">
+                    <button class="share-option-btn" onclick="copyProfileLink()">
+                        <i class="fas fa-link"></i>
+                        <div>
+                            <strong>Copy Link</strong>
+                            <p>Copy profile link to clipboard</p>
+                        </div>
+                    </button>
+                    <button class="share-option-btn" onclick="sendProfileEmail()">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Send Email</strong>
+                            <p>Share via email</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" onclick="closeModal(this)">Cancel</button>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    
+    setTimeout(() => {
+        modal.classList.add('show');
+    }, 100);
+}
+
+function copyProfileLink() {
+    const profileUrl = `${window.location.origin}/pages/profile.html`;
+    
+    navigator.clipboard.writeText(profileUrl).then(() => {
+        showShareNotification();
+        // Close modal
+        const modal = document.querySelector('.modal');
+        if (modal) {
+            modal.classList.remove('show');
+            setTimeout(() => {
+                if (modal.parentNode) {
+                    modal.parentNode.removeChild(modal);
+                }
+            }, 300);
+        }
+    }).catch(() => {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = profileUrl;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        showShareNotification();
+        // Close modal
+        const modal = document.querySelector('.modal');
+        if (modal) {
+            modal.classList.remove('show');
+            setTimeout(() => {
+                if (modal.parentNode) {
+                    modal.parentNode.removeChild(modal);
+                }
+            }, 300);
+        }
+    });
+}
+
+function sendProfileEmail() {
+    const profileUrl = `${window.location.origin}/pages/profile.html`;
+    const subject = encodeURIComponent(`Mark - TalentVault Profile`);
+    const body = encodeURIComponent(`Hey there!\n\nPlease checkout my TalentVault profile!\n\n${profileUrl}`);
+    
+    // Open Gmail compose with the profile link
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=&su=${subject}&body=${body}`;
+    window.open(gmailUrl, '_blank');
+    
+    // Close modal
+    const modal = document.querySelector('.modal');
+    if (modal) {
+        modal.classList.remove('show');
+        setTimeout(() => {
+            if (modal.parentNode) {
+                modal.parentNode.removeChild(modal);
+            }
+        }, 300);
+    }
+}
+
+function showShareNotification() {
+    const notification = document.createElement('div');
+    notification.className = 'clipboard-notification';
+    notification.innerHTML = `
+        <i class="fas fa-check-circle"></i>
+        <span>Profile link copied to clipboard!</span>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 100);
+    
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    }, 3000);
+}

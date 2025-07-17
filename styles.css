@@ -5724,5 +5724,273 @@ input:checked + .slider:before {
 }
 
 /* ===========================================
+   TALENTVAULT SKILL BADGES
+   =========================================== */
+
+.skill-badges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.portfolio-section .section-subtitle {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-xl);
+    margin-top: -var(--spacing-md);
+    line-height: 1.5;
+}
+
+.talent-badge {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    padding-right: 60px; /* Extra padding to avoid overlap with TV logo */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.talent-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.talent-badge.expert {
+    border-color: #10b981;
+}
+
+.talent-badge.expert::before {
+    background: linear-gradient(90deg, #10b981, #059669);
+}
+
+.talent-badge.advanced {
+    border-color: #3b82f6;
+}
+
+.talent-badge.advanced::before {
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+}
+
+.talent-badge.intermediate {
+    border-color: #f59e0b;
+}
+
+.talent-badge.intermediate::before {
+    background: linear-gradient(90deg, #f59e0b, #d97706);
+}
+
+.talent-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.badge-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--white);
+    flex-shrink: 0;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+}
+
+.talent-badge.expert .badge-icon {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.talent-badge.advanced .badge-icon {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.talent-badge.intermediate .badge-icon {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.badge-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.badge-content h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin: 0 0 var(--spacing-xs) 0;
+    line-height: 1.4;
+}
+
+.badge-content p {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+    margin: 0 0 var(--spacing-sm) 0;
+    line-height: 1.4;
+}
+
+.badge-footer {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.75rem;
+    color: var(--gray-500);
+}
+
+.badge-score {
+    background: linear-gradient(135deg, var(--success), #2ea043);
+    color: var(--white);
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+.talent-badge.expert .badge-score {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.talent-badge.advanced .badge-score {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.talent-badge.intermediate .badge-score {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.badge-date {
+    font-weight: 500;
+    color: var(--gray-500);
+}
+
+.badge-logo {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3), 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.badge-logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4), 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.talentvault-logo {
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.badge-legend {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: var(--gray-50);
+    border-radius: var(--radius-md);
+    margin-top: var(--spacing-lg);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.875rem;
+    color: var(--gray-600);
+}
+
+.legend-badge {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.legend-badge.expert {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.legend-badge.advanced {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.legend-badge.intermediate {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .skill-badges-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .talent-badge {
+        padding: var(--spacing-md);
+        padding-right: 50px; /* Adjusted for mobile */
+    }
+    
+    .badge-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+    
+    .badge-content h4 {
+        font-size: 1rem;
+    }
+    
+    .badge-content p {
+        font-size: 0.8rem;
+    }
+    
+    .badge-logo {
+        top: 8px;
+        right: 8px;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .talentvault-logo {
+        font-size: 0.7rem;
+    }
+    
+    .badge-legend {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .legend-item {
+        font-size: 0.8rem;
+    }
+}
+
+/* ===========================================
    END OF SKILLFORGE CSS FRAMEWORK
    =========================================== */
