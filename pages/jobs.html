@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs - TalentVault</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="nav-brand">
+                    <h2><a href="../index.html">TalentVault</a></h2>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <div class="nav-links" id="nav-links">
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="jobs.html" class="active">Jobs</a>
+                    <a href="freelance-jobs.html">Freelance</a>
+                    <a href="skill-assessment.html">Assessment</a>
+                    <a href="profile.html" class="user-menu">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span class="user-name">Mark</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="job-search-title"><i class="fas fa-search"></i> Job Search</h1>
+                <p>Find your perfect job match with AI-powered recommendations</p>
+            </div>
+
+            <!-- Job Search Filters -->
+            <div class="job-search-section">
+                <div class="search-filters">
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label for="keyword-filter">Keywords:</label>
+                            <input type="text" id="keyword-filter" placeholder="e.g. React, Python, Designer">
+                        </div>
+                        <div class="filter-group">
+                            <label for="location-filter">Location: <span class="mandatory-marker">*</span></label>
+                            <select id="location-filter">
+                                <option value="">Select Location</option>
+                                <option value="remote">Remote</option>
+                                <option value="mumbai">Mumbai</option>
+                                <option value="delhi">Delhi</option>
+                                <option value="bangalore">Bangalore</option>
+                                <option value="pune">Pune</option>
+                                <option value="hyderabad">Hyderabad</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="job-type-filter">Job Type: <span class="mandatory-marker">*</span></label>
+                            <select id="job-type-filter">
+                                <option value="">Select Type</option>
+                                <option value="full-time">Full Time</option>
+                                <option value="part-time">Part Time</option>
+                                <option value="contract">Contract</option>
+                                <option value="internship">Internship</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="experience-filter">Experience:</label>
+                            <select id="experience-filter">
+                                <option value="">Any Experience</option>
+                                <option value="entry">Entry Level</option>
+                                <option value="mid">Mid Level</option>
+                                <option value="senior">Senior Level</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label for="skills-filter">Skills: <span class="mandatory-marker">*</span></label>
+                            <input type="text" id="skills-filter" placeholder="e.g. JavaScript, Python, Design">
+                        </div>
+                        <div class="filter-group">
+                            <label for="salary-filter">Salary Range:</label>
+                            <select id="salary-filter">
+                                <option value="">Any Salary</option>
+                                <option value="0-3">₹0-3 LPA</option>
+                                <option value="3-6">₹3-6 LPA</option>
+                                <option value="6-12">₹6-12 LPA</option>
+                                <option value="12-20">₹12-20 LPA</option>
+                                <option value="20+">₹20+ LPA</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="company-size-filter">Company Size:</label>
+                            <select id="company-size-filter">
+                                <option value="">Any Size</option>
+                                <option value="startup">Startup (1-50)</option>
+                                <option value="medium">Medium (51-200)</option>
+                                <option value="large">Large (201-1000)</option>
+                                <option value="enterprise">Enterprise (1000+)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-actions">
+                        <div class="filter-primary-actions">
+                            <button class="search-btn big-search-btn" onclick="searchJobs()">
+                                <i class="fas fa-search"></i> Search Jobs
+                            </button>
+                        </div>
+                        <div class="filter-secondary-actions">
+                            <button class="clear-filters-btn small-clear-btn" onclick="clearFilters()">
+                                <i class="fas fa-times"></i> Clear Filters
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="filter-help">
+                    <p id="filter-help-text">
+                        <i class="fas fa-info-circle"></i> 
+                        <span class="mandatory-marker">*</span> Select mandatory filters to get customized results. 
+                        Until then, showing jobs relevant to your profile.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Loading indicator -->
+            <div class="loading-indicator" id="loading-indicator" style="display: none;">
+                <div class="spinner"></div>
+                <p>Loading job opportunities...</p>
+            </div>
+
+            <!-- Job Stats -->
+            <div class="jobs-stats" id="jobs-stats">
+                <div class="stat-item">
+                    <i class="fas fa-target"></i>
+                    <span><strong id="perfect-matches-count">0</strong> Perfect Matches</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span><strong id="match-rate">0%</strong> Match Rate</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-clock"></i>
+                    <span><strong id="new-today-count">0</strong> New Today</span>
+                </div>
+            </div>
+
+            <!-- Job Results -->
+            <div class="jobs-container" id="jobs-container">
+                <!-- Perfect Match Jobs -->
+                <div class="jobs-section" id="perfect-matches-section">
+                    <h2><i class="fas fa-star"></i> Perfect Matches for You</h2>
+                    <div class="jobs-grid" id="perfect-matches-grid">
+                        <!-- Dynamic job cards will be inserted here -->
+                    </div>
+                </div>
+
+                <!-- Other Opportunities -->
+                <div class="jobs-section" id="other-jobs-section">
+                    <h2><i class="fas fa-briefcase"></i> Other Opportunities</h2>
+                    <div class="jobs-grid" id="other-jobs-grid">
+                        <!-- Dynamic job cards will be inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../script.js"></script>
+    <script src="jobs.js"></script>
+</body>
+</html>

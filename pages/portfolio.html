@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - TalentVault</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="nav-brand">
+                    <h2><a href="../index.html" style="text-decoration: none; color: var(--primary-blue);">TalentVault</a></h2>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <div class="nav-links" id="nav-links">
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="portfolio.html" class="active">Portfolio</a>
+                    <a href="jobs.html">Jobs</a>
+                    <a href="freelance-jobs.html">Freelance</a>
+                    <a href="skill-assessment.html">Assessment</a>
+                    <a href="profile.html" class="user-menu">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span class="user-name">Mark</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="portfolio-page">
+        <div class="portfolio-header">
+            <h1><i class="fas fa-briefcase"></i> Your Portfolio</h1>
+            <div class="portfolio-actions">
+                <button class="btn-secondary" onclick="connectProfiles()">
+                    <i class="fas fa-link"></i> Connect your Profiles
+                </button>
+                <button class="btn-primary" onclick="sharePortfolio()">
+                    <i class="fas fa-share"></i> Share Portfolio
+                </button>
+            </div>
+        </div>
+
+        <div class="portfolio-stats">
+            <div class="stat-card">
+                <i class="fas fa-eye"></i>
+                <h3>156</h3>
+                <p>Profile Views</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-heart"></i>
+                <h3>23</h3>
+                <p>Likes</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-comment"></i>
+                <h3>8</h3>
+                <p>Comments</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-download"></i>
+                <h3>12</h3>
+                <p>Downloads</p>
+            </div>
+        </div>
+
+        <div class="portfolio-grid">
+            <!-- GitHub Projects -->
+            <div class="portfolio-section">
+                <h2><i class="fab fa-github"></i> GitHub Projects</h2>
+                <div class="project-grid" id="github-projects">
+                    <div class="project-card">
+                        <div class="project-image" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                            <div class="project-logo">
+                                <div class="logo-icon"><i class="fab fa-github"></i></div>
+                                <div class="logo-text">GitHub</div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>AI Chatbot</h3>
+                            <p>Python-based chatbot using NLP and machine learning algorithms</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">AI</span>
+                                <span class="tag">NLP</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="#" class="btn-small">View Code</a>
+                                <a href="#" class="btn-small">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image" style="background: linear-gradient(135deg, #764ba2, #667eea);">
+                            <div class="project-logo">
+                                <div class="logo-icon"><i class="fab fa-github"></i></div>
+                                <div class="logo-text">GitHub</div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Portfolio Website</h3>
+                            <p>Responsive personal portfolio with modern design and smooth animations</p>
+                            <div class="project-tags">
+                                <span class="tag">HTML/CSS</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Responsive</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="#" class="btn-small">View Code</a>
+                                <a href="#" class="btn-small">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design Projects -->
+            <div class="portfolio-section">
+                <h2><i class="fab fa-behance"></i> Design Projects</h2>
+                <div class="project-grid" id="design-projects">
+                    <div class="project-card">
+                        <div class="project-image" style="background: linear-gradient(45deg, #667eea, #764ba2);">
+                            <div class="project-logo">
+                                <div class="logo-icon"><i class="fab fa-behance"></i></div>
+                                <div class="logo-text">Behance</div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Brand Identity Design</h3>
+                            <p>Complete brand identity for startup</p>
+                            <div class="project-tags">
+                                <span class="tag">Branding</span>
+                                <span class="tag">Logo Design</span>
+                                <span class="tag">Adobe Illustrator</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="#" class="btn-small">View Project</a>
+                                <a href="#" class="btn-small">Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image" style="background: linear-gradient(45deg, #f093fb, #f5576c);">
+                            <div class="project-logo">
+                                <div class="logo-icon"><i class="fab fa-dribbble"></i></div>
+                                <div class="logo-text">Dribbble</div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Mobile App UI</h3>
+                            <p>Modern mobile app interface design</p>
+                            <div class="project-tags">
+                                <span class="tag">UI/UX</span>
+                                <span class="tag">Mobile Design</span>
+                                <span class="tag">Figma</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="#" class="btn-small">View Design</a>
+                                <a href="#" class="btn-small">Prototype</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Verification -->
+            <div class="portfolio-section">
+                <h2><i class="fas fa-certificate"></i> Verified Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-badge verified">
+                        <i class="fas fa-check-circle"></i>
+                        <span>JavaScript</span>
+                        <small>Blockchain Verified</small>
+                    </div>
+                    <div class="skill-badge">
+                        <i class="fas fa-clock"></i>
+                        <span>Python</span>
+                        <small>Pending Verification</small>
+                    </div>
+                    <div class="skill-badge">
+                        <i class="fas fa-clock"></i>
+                        <span>UI/UX Design</span>
+                        <small>Pending Verification</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Community Feedback Section -->
+        <div class="community-feedback-section">
+            <h2><i class="fas fa-comments"></i> Community Feedback</h2>
+            <p class="section-subtitle">See what peers and industry experts say about your work</p>
+            <div class="community-feedback-grid">
+                <div class="community-feedback-card">
+                    <div class="feedback-header">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Senior Developer at TechCorp</p>
+                        </div>
+                    </div>
+                    <div class="feedback-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Excellent coding skills demonstrated in the AI chatbot project. Clean code structure and good documentation."</p>
+                    </div>
+                </div>
+
+                <div class="community-feedback-card">
+                    <div class="feedback-header">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-info">
+                            <h4>Mike Chen</h4>
+                            <p>Design Lead at CreativeStudio</p>
+                        </div>
+                    </div>
+                    <div class="feedback-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p>"Great design sense! The brand identity project shows strong understanding of visual hierarchy."</p>
+                    </div>
+                </div>
+
+                <div class="community-feedback-card">
+                    <div class="feedback-header">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-info">
+                            <h4>David Rodriguez</h4>
+                            <p>Tech Lead at Innovation Labs</p>
+                        </div>
+                    </div>
+                    <div class="feedback-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Impressive problem-solving approach. The portfolio website demonstrates strong technical skills and attention to detail."</p>
+                    </div>
+                </div>
+
+                <div class="community-feedback-card">
+                    <div class="feedback-header">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-info">
+                            <h4>Emily Watson</h4>
+                            <p>UX Director at Design Studio</p>
+                        </div>
+                    </div>
+                    <div class="feedback-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Outstanding user experience design! The mobile app UI project shows excellent understanding of modern design principles."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../script.js"></script>
+    <script src="../portfolio.js"></script>
+</body>
+</html>

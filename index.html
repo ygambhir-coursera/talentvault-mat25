@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalentVault - Portfolio & Career Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="nav-brand">
+                    <h2><a href="index.html">TalentVault</a></h2>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <div class="nav-links" id="nav-links">
+                    <a href="pages/dashboard.html">Dashboard</a>
+                    <a href="pages/portfolio.html">Portfolio</a>
+                    <a href="pages/jobs.html">Jobs</a>
+                    <a href="pages/freelance-jobs.html">Freelance</a>
+                    <a href="pages/skill-assessment.html">Assessment</a>
+                    <a href="#features">Features</a>
+                    <a href="pages/dashboard.html" class="btn btn-primary">Get Started</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Showcase Your Talent, Unlock Your Future</h1>
+                <p>Connect your existing portfolios, get verified credentials, and discover career opportunities - all in one secure vault.</p>
+                <div class="hero-buttons">
+                    <a href="pages/dashboard.html" class="btn btn-primary btn-large">Start Building</a>
+                    <a href="#demo" class="btn btn-secondary btn-large">Watch Demo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features section">
+            <div class="container">
+                <h2>Platform Features</h2>
+                <p class="features-subtitle">
+                    Discover how TalentVault transforms your career journey with AI-powered tools and blockchain verification.
+                </p>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-link"></i>
+                        <h3>Portfolio Integration</h3>
+                        <p>Connect GitHub, Behance, Notion and showcase your work seamlessly without recreating content.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Blockchain Verification</h3>
+                        <p>Get your skills and achievements verified with immutable blockchain technology for enhanced credibility.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>AI Job Matching</h3>
+                        <p>Advanced AI algorithms match you with perfect opportunities based on your portfolio and skills.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Community Feedback</h3>
+                        <p>Get valuable feedback from peers and industry experts to improve your portfolio and skills.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Analytics Dashboard</h3>
+                        <p>Track your progress, portfolio views, and application success rates with detailed analytics.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Mobile Optimized</h3>
+                        <p>Access your portfolio and job opportunities anywhere with our fully responsive mobile design.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="how-it-works section section-highlighted">
+            <div class="container">
+                <h2>How It Works</h2>
+                <p class="section-subtitle">Follow these simple steps to transform your career journey</p>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Connect Your Accounts</h3>
+                        <p>Link your existing GitHub, Behance, LinkedIn, and other platform accounts to import your work automatically.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Build Your Portfolio</h3>
+                        <p>Curate and organize your best work in one professional portfolio with AI-powered optimization suggestions.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Get Verified</h3>
+                        <p>Take skill assessments and get blockchain-verified credentials that employers can trust and verify instantly.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Find Opportunities</h3>
+                        <p>Discover jobs and internships that perfectly match your skillset with our advanced AI matching algorithms.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="section" style="background: var(--white);">
+            <div class="container text-center">
+                <h2>Trusted by Professionals Worldwide</h2>
+                <div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-xl); margin-top: var(--spacing-xxxl);">
+                    <div class="stat-item text-center">
+                        <div style="font-size: 3rem; font-weight: 700; color: var(--primary-blue); margin-bottom: var(--spacing-sm);">10K+</div>
+                        <p style="color: var(--gray-600); font-weight: 600; margin: 0;">Active Users</p>
+                    </div>
+                    <div class="stat-item text-center">
+                        <div style="font-size: 3rem; font-weight: 700; color: var(--primary-blue); margin-bottom: var(--spacing-sm);">5K+</div>
+                        <p style="color: var(--gray-600); font-weight: 600; margin: 0;">Portfolios Created</p>
+                    </div>
+                    <div class="stat-item text-center">
+                        <div style="font-size: 3rem; font-weight: 700; color: var(--primary-blue); margin-bottom: var(--spacing-sm);">2K+</div>
+                        <p style="color: var(--gray-600); font-weight: 600; margin: 0;">Jobs Matched</p>
+                    </div>
+                    <div class="stat-item text-center">
+                        <div style="font-size: 3rem; font-weight: 700; color: var(--primary-blue); margin-bottom: var(--spacing-sm);">95%</div>
+                        <p style="color: var(--gray-600); font-weight: 600; margin: 0;">Success Rate</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="section testimonials-section">
+            <div class="container">
+                <h2 class="text-center">What Our Users Say</h2>
+                <p class="section-subtitle">Hear from professionals who transformed their careers with TalentVault</p>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="user-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="user-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>Frontend Developer at Google</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>TalentVault helped me showcase my GitHub projects professionally and landed me my dream job at Google. The blockchain verification gave me credibility that stood out to employers.</p>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="user-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="user-info">
+                                <h4>Mike Chen</h4>
+                                <p>UX Designer at Airbnb</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>The AI job matching is incredible! It found positions that perfectly matched my design skills and portfolio. I got 3 interview calls in the first week.</p>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="user-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="user-info">
+                                <h4>Priya Patel</h4>
+                                <p>Data Scientist at Microsoft</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>Being able to connect my GitHub, Kaggle, and Medium accounts in one place made my portfolio so much stronger. The skill verification process is amazing!</p>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="user-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="user-info">
+                                <h4>David Rodriguez</h4>
+                                <p>Full Stack Developer at Netflix</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>The blockchain verification gave me instant credibility with recruiters. My job search time was cut in half thanks to TalentVault's platform.</p>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="user-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="user-info">
+                                <h4>Lisa Wang</h4>
+                                <p>Product Manager at Apple</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>The AI-powered skill assessment helped me identify areas for improvement. Now I'm working at my dream company!</p>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="user-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="user-info">
+                                <h4>Alex Thompson</h4>
+                                <p>DevOps Engineer at Amazon</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>TalentVault's platform integration is seamless. It automatically detected my skills from GitHub and LinkedIn, making portfolio building effortless.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section" style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%); color: var(--white);">
+            <div class="container text-center">
+                <h2 style="color: var(--white); font-size: 2.5rem; margin-bottom: var(--spacing-lg);">Ready to Build Your Vault?</h2>
+                <p style="font-size: 1.25rem; margin-bottom: var(--spacing-xl); color: rgba(255, 255, 255, 0.9);">
+                    Join thousands of professionals who have transformed their careers with TalentVault.
+                </p>
+                <div class="hero-buttons">
+                    <a href="pages/dashboard.html" class="btn btn-primary btn-large" style="background: var(--white); color: var(--primary-blue);">
+                        <i class="fas fa-rocket"></i> Start Your Journey
+                    </a>
+                    <a href="#features" class="btn btn-secondary btn-large">
+                        <i class="fas fa-play"></i> Learn More
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-xl); margin-bottom: var(--spacing-xl);">
+                <div>
+                    <h3 style="color: var(--white); margin-bottom: var(--spacing-md);">TalentVault</h3>
+                    <p style="color: var(--gray-400); margin-bottom: var(--spacing-md);">
+                        Showcase your talent, skills, and unlock your dream job with blockchain-verified credentials.
+                    </p>
+                    <div style="display: flex; gap: var(--spacing-md);">
+                        <a href="#" style="color: var(--gray-400); font-size: 1.25rem;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: var(--gray-400); font-size: 1.25rem;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="color: var(--gray-400); font-size: 1.25rem;"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--white); margin-bottom: var(--spacing-md);">Platform</h4>
+                    <div style="display: flex; flex-direction: column; gap: var(--spacing-sm);">
+                        <a href="pages/dashboard.html" style="color: var(--gray-400);">Dashboard</a>
+                        <a href="pages/portfolio.html" style="color: var(--gray-400);">Portfolio</a>
+                        <a href="pages/jobs.html" style="color: var(--gray-400);">Jobs</a>
+                        <a href="#" style="color: var(--gray-400);">Verification</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--white); margin-bottom: var(--spacing-md);">Resources</h4>
+                    <div style="display: flex; flex-direction: column; gap: var(--spacing-sm);">
+                        <a href="#" style="color: var(--gray-400);">Help Center</a>
+                        <a href="#" style="color: var(--gray-400);">API Documentation</a>
+                        <a href="#" style="color: var(--gray-400);">Blog</a>
+                        <a href="#" style="color: var(--gray-400);">Community</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--white); margin-bottom: var(--spacing-md);">Company</h4>
+                    <div style="display: flex; flex-direction: column; gap: var(--spacing-sm);">
+                        <a href="#" style="color: var(--gray-400);">About Us</a>
+                        <a href="#" style="color: var(--gray-400);">Careers</a>
+                        <a href="#" style="color: var(--gray-400);">Privacy Policy</a>
+                        <a href="#" style="color: var(--gray-400);">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid var(--gray-600); padding-top: var(--spacing-lg); text-align: center;">
+                <p>&copy; 2024 TalentVault. Built with AI-powered tools and blockchain technology.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Container -->
+    <div id="notification-container" class="notification-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

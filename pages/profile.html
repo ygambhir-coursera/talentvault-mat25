@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - TalentVault</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="nav-brand">
+                    <h2><a href="../index.html" style="text-decoration: none; color: var(--primary-blue);">TalentVault</a></h2>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <div class="nav-links" id="nav-links">
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="jobs.html">Jobs</a>
+                    <a href="freelance-jobs.html">Freelance</a>
+                    <a href="skill-assessment.html">Assessment</a>
+                    <a href="profile.html" class="user-menu active">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span class="user-name">Mark</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="profile-page">
+        <div class="profile-header">
+            <h1><i class="fas fa-user-circle"></i> My Profile</h1>
+            <div class="profile-actions">
+                <button class="btn btn-secondary" onclick="shareProfile()">
+                    <i class="fas fa-share"></i> Share Profile
+                </button>
+                <button class="btn btn-primary" onclick="editProfile()">
+                    <i class="fas fa-edit"></i> Edit Profile
+                </button>
+            </div>
+        </div>
+
+        <div class="profile-content">
+            <!-- Profile Overview Card -->
+            <div class="profile-overview-card">
+                <div class="profile-avatar-section">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <button class="btn-small" onclick="changeAvatar()">
+                        <i class="fas fa-camera"></i> Change Photo
+                    </button>
+                </div>
+                <div class="profile-info">
+                    <h2 id="profile-name">Mark</h2>
+                    <p id="profile-title">Full Stack Developer</p>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-eye"></i>
+                            <span>156 Profile Views</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>Member since Jan 2024</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>3 Verified Skills</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Sections -->
+            <div class="profile-sections">
+                <!-- Personal Information -->
+                <div class="profile-section">
+                    <h3><i class="fas fa-user"></i> Personal Information</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Full Name</label>
+                            <span id="full-name">Mark</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Email</label>
+                            <span id="email">mark@example.com</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Phone</label>
+                            <span id="phone">+1 (555) 123-4567</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Location</label>
+                            <span id="location">San Francisco, CA</span>
+                        </div>
+                        <div class="info-item full-width">
+                            <label>Bio</label>
+                            <span id="bio">Passionate full-stack developer with 5+ years of experience in modern web technologies. Love building innovative solutions that make a difference.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Summary -->
+                <div class="profile-section">
+                    <h3><i class="fas fa-briefcase"></i> Professional Summary</h3>
+                    <div class="professional-summary">
+                        <div class="summary-item">
+                            <h4>Experience Level</h4>
+                            <p>Senior (5+ years)</p>
+                        </div>
+                        <div class="summary-item">
+                            <h4>Primary Skills</h4>
+                            <div class="skills-list">
+                                <span class="skill-pill">JavaScript</span>
+                                <span class="skill-pill">React</span>
+                                <span class="skill-pill">Node.js</span>
+                                <span class="skill-pill">Python</span>
+                                <span class="skill-pill">UI/UX Design</span>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <h4>Preferred Role</h4>
+                            <p>Full Stack Developer, Frontend Developer, Technical Lead</p>
+                        </div>
+                        <div class="summary-item">
+                            <h4>Availability</h4>
+                            <p>Open to opportunities</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Assessment -->
+                <div class="profile-section">
+                    <h3><i class="fas fa-brain"></i> Skill Assessment</h3>
+                    <div class="skill-assessment-overview">
+                        <div class="assessment-item">
+                            <div class="assessment-info">
+                                <h4>JavaScript Assessment</h4>
+                                <p>Last taken: 2 weeks ago</p>
+                                <div class="assessment-score">
+                                    <span class="score-label">Score:</span>
+                                    <span class="score-value">85%</span>
+                                </div>
+                            </div>
+                            <button class="btn-primary" onclick="window.location.href='skill-assessment.html'">
+                                <i class="fas fa-redo"></i> Retake
+                            </button>
+                        </div>
+                        <div class="assessment-item">
+                            <div class="assessment-info">
+                                <h4>React Assessment</h4>
+                                <p>Last taken: 1 month ago</p>
+                                <div class="assessment-score">
+                                    <span class="score-label">Score:</span>
+                                    <span class="score-value">78%</span>
+                                </div>
+                            </div>
+                            <button class="btn-primary" onclick="window.location.href='skill-assessment.html'">
+                                <i class="fas fa-redo"></i> Retake
+                            </button>
+                        </div>
+                        <div class="assessment-item">
+                            <div class="assessment-info">
+                                <h4>Python Assessment</h4>
+                                <p>Not taken yet</p>
+                                <div class="assessment-score">
+                                    <span class="score-label">Score:</span>
+                                    <span class="score-value">-</span>
+                                </div>
+                            </div>
+                            <button class="btn-secondary" onclick="window.location.href='skill-assessment.html'">
+                                <i class="fas fa-play"></i> Take Test
+                            </button>
+                        </div>
+                        <div class="assessment-item">
+                            <div class="assessment-info">
+                                <h4>UI/UX Design Assessment</h4>
+                                <p>Not taken yet</p>
+                                <div class="assessment-score">
+                                    <span class="score-label">Score:</span>
+                                    <span class="score-value">-</span>
+                                </div>
+                            </div>
+                            <button class="btn-secondary" onclick="window.location.href='skill-assessment.html'">
+                                <i class="fas fa-play"></i> Take Test
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Connected Platforms -->
+                <div class="profile-section">
+                    <h3><i class="fas fa-link"></i> Connected Platforms</h3>
+                    <div class="connected-platforms">
+                        <div class="platform-item connected">
+                            <i class="fab fa-github"></i>
+                            <div class="platform-info">
+                                <h4>GitHub</h4>
+                                <p>mark</p>
+                            </div>
+                            <div class="platform-stats">
+                                <span>12 repos</span>
+                                <span>45 stars</span>
+                            </div>
+                            <button class="btn-small btn-secondary" onclick="managePlatform('github')">Manage</button>
+                        </div>
+                        <div class="platform-item connected">
+                            <i class="fab fa-kaggle"></i>
+                            <div class="platform-info">
+                                <h4>Kaggle</h4>
+                                <p>mark-ds</p>
+                            </div>
+                            <div class="platform-stats">
+                                <span>5 competitions</span>
+                                <span>Bronze medal</span>
+                            </div>
+                            <button class="btn-small btn-secondary" onclick="managePlatform('kaggle')">Manage</button>
+                        </div>
+                        <div class="platform-item">
+                            <i class="fab fa-figma"></i>
+                            <div class="platform-info">
+                                <h4>Figma</h4>
+                                <p>Not connected</p>
+                            </div>
+                            <div class="platform-stats">
+                                <span>-</span>
+                            </div>
+                            <button class="btn-small btn-primary" onclick="connectPlatform('figma')">Connect</button>
+                        </div>
+                        <div class="platform-item">
+                            <i class="fab fa-behance"></i>
+                            <div class="platform-info">
+                                <h4>Behance</h4>
+                                <p>Not connected</p>
+                            </div>
+                            <div class="platform-stats">
+                                <span>-</span>
+                            </div>
+                            <button class="btn-small btn-primary" onclick="connectPlatform('behance')">Connect</button>
+                        </div>
+                        <div class="platform-item">
+                            <i class="fab fa-linkedin"></i>
+                            <div class="platform-info">
+                                <h4>LinkedIn</h4>
+                                <p>Not connected</p>
+                            </div>
+                            <div class="platform-stats">
+                                <span>-</span>
+                            </div>
+                            <button class="btn-small btn-primary" onclick="connectPlatform('linkedin')">Connect</button>
+                        </div>
+                        <div class="platform-item">
+                            <i class="fab fa-dribbble"></i>
+                            <div class="platform-info">
+                                <h4>Dribbble</h4>
+                                <p>Not connected</p>
+                            </div>
+                            <div class="platform-stats">
+                                <span>-</span>
+                            </div>
+                            <button class="btn-small btn-primary" onclick="connectPlatform('dribbble')">Connect</button>
+                        </div>
+                        <div class="platform-item">
+                            <i class="fab fa-gitlab"></i>
+                            <div class="platform-info">
+                                <h4>GitLab</h4>
+                                <p>Not connected</p>
+                            </div>
+                            <div class="platform-stats">
+                                <span>-</span>
+                            </div>
+                            <button class="btn-small btn-primary" onclick="connectPlatform('gitlab')">Connect</button>
+                        </div>
+                        <div class="platform-item">
+                            <i class="fab fa-stack-overflow"></i>
+                            <div class="platform-info">
+                                <h4>Stack Overflow</h4>
+                                <p>Not connected</p>
+                            </div>
+                            <div class="platform-stats">
+                                <span>-</span>
+                            </div>
+                            <button class="btn-small btn-primary" onclick="connectPlatform('stackoverflow')">Connect</button>
+                        </div>
+                        <div class="platform-item">
+                            <i class="fas fa-code"></i>
+                            <div class="platform-info">
+                                <h4>HackerRank</h4>
+                                <p>Not connected</p>
+                            </div>
+                            <div class="platform-stats">
+                                <span>-</span>
+                            </div>
+                            <button class="btn-small btn-primary" onclick="connectPlatform('hackerrank')">Connect</button>
+                        </div>
+                        <div class="platform-item">
+                            <i class="fab fa-aws"></i>
+                            <div class="platform-info">
+                                <h4>AWS/Azure</h4>
+                                <p>Not connected</p>
+                            </div>
+                            <div class="platform-stats">
+                                <span>-</span>
+                            </div>
+                            <button class="btn-small btn-primary" onclick="connectPlatform('aws')">Connect</button>
+                        </div>
+                        <div class="platform-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <div class="platform-info">
+                                <h4>Tableau Public</h4>
+                                <p>Not connected</p>
+                            </div>
+                            <div class="platform-stats">
+                                <span>-</span>
+                            </div>
+                            <button class="btn-small btn-primary" onclick="connectPlatform('tableau')">Connect</button>
+                        </div>
+                        <div class="platform-item">
+                            <i class="fas fa-chart-line"></i>
+                            <div class="platform-info">
+                                <h4>Google Data Studio</h4>
+                                <p>Not connected</p>
+                            </div>
+                            <div class="platform-stats">
+                                <span>-</span>
+                            </div>
+                            <button class="btn-small btn-primary" onclick="connectPlatform('datastudio')">Connect</button>
+                        </div>
+                        <div class="platform-item">
+                            <i class="fas fa-palette"></i>
+                            <div class="platform-info">
+                                <h4>Carbonmade</h4>
+                                <p>Not connected</p>
+                            </div>
+                            <div class="platform-stats">
+                                <span>-</span>
+                            </div>
+                            <button class="btn-small btn-primary" onclick="connectPlatform('carbonmade')">Connect</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Saved Jobs / Wishlist -->
+                <div class="profile-section">
+                    <h3><i class="fas fa-heart"></i> Saved Jobs</h3>
+                    <div class="saved-jobs-container">
+                        <div class="saved-jobs-header">
+                            <p>Your wishlist of saved job opportunities</p>
+                            <button class="btn-secondary" onclick="viewAllSavedJobs()">
+                                <i class="fas fa-external-link-alt"></i> View All
+                            </button>
+                        </div>
+                        <div id="saved-jobs-list" class="saved-jobs-list">
+                            <!-- Saved jobs will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account Settings -->
+                <div class="profile-section">
+                    <h3><i class="fas fa-cog"></i> Account Settings</h3>
+                    <div class="settings-grid">
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Email Notifications</h4>
+                                <p>Receive updates about your portfolio and opportunities</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Profile Visibility</h4>
+                                <p>Make your profile visible to recruiters and employers</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Job Recommendations</h4>
+                                <p>Get personalized job recommendations based on your skills</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Skill Assessment Reminders</h4>
+                                <p>Get reminded to retake assessments to keep skills current</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Privacy & Security -->
+                <div class="profile-section">
+                    <h3><i class="fas fa-shield-alt"></i> Privacy & Security</h3>
+                    <div class="privacy-settings">
+                        <div class="privacy-item">
+                            <h4>Change Password</h4>
+                            <p>Update your account password for security</p>
+                            <button class="btn-secondary" onclick="changePassword()">
+                                <i class="fas fa-key"></i> Change Password
+                            </button>
+                        </div>
+                        <div class="privacy-item">
+                            <h4>Two-Factor Authentication</h4>
+                            <p>Add an extra layer of security to your account</p>
+                            <button class="btn-primary" onclick="setup2FA()">
+                                <i class="fas fa-mobile-alt"></i> Enable 2FA
+                            </button>
+                        </div>
+                        <div class="privacy-item">
+                            <h4>Data Export</h4>
+                            <p>Download a copy of your profile data</p>
+                            <button class="btn-secondary" onclick="exportData()">
+                                <i class="fas fa-download"></i> Export Data
+                            </button>
+                        </div>
+                        <div class="privacy-item danger">
+                            <h4>Delete Account</h4>
+                            <p>Permanently delete your account and all associated data</p>
+                            <button class="btn-danger" onclick="deleteAccount()">
+                                <i class="fas fa-trash"></i> Delete Account
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../script.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html> 

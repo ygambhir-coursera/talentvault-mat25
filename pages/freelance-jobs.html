@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelance Jobs - TalentVault</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="nav-brand">
+                    <h2><a href="../index.html" style="text-decoration: none; color: var(--primary-blue);">TalentVault</a></h2>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <div class="nav-links" id="nav-links">
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="jobs.html">Jobs</a>
+                    <a href="freelance-jobs.html" class="active">Freelance</a>
+                    <a href="skill-assessment.html">Assessment</a>
+                    <a href="profile.html" class="user-menu">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span class="user-name">Mark</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="jobs-page">
+        <div class="jobs-header">
+            <h1><i class="fas fa-laptop-code"></i> Freelance Opportunities</h1>
+            <p>Find your next freelance project from top platforms</p>
+        </div>
+
+        <!-- Search and Filter Section -->
+        <div class="jobs-search-section">
+            <div class="search-container">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="job-search" placeholder="Search freelance jobs (e.g., web development, graphic design, writing)">
+                    <button class="search-btn" onclick="searchFreelanceJobs()">Search</button>
+                </div>
+                
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <label for="category-filter">Category:</label>
+                        <select id="category-filter" onchange="filterFreelanceJobs()">
+                            <option value="">All Categories</option>
+                            <option value="web-development">Web Development</option>
+                            <option value="mobile-development">Mobile Development</option>
+                            <option value="design">Design & Creative</option>
+                            <option value="writing">Writing & Content</option>
+                            <option value="marketing">Marketing & SEO</option>
+                            <option value="data-science">Data Science & AI</option>
+                            <option value="consulting">Business Consulting</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="platform-filter">Platform:</label>
+                        <select id="platform-filter" onchange="filterFreelanceJobs()">
+                            <option value="">All Platforms</option>
+                            <option value="upwork">Upwork</option>
+                            <option value="peopleperhour">PeoplePerHour</option>
+                            <option value="freelancer">Freelancer</option>
+                            <option value="guru">Guru</option>
+                            <option value="fiverr">Fiverr</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="budget-filter">Budget Range:</label>
+                        <select id="budget-filter" onchange="filterFreelanceJobs()">
+                            <option value="">Any Budget</option>
+                            <option value="0-500">$0 - $500</option>
+                            <option value="500-1000">$500 - $1,000</option>
+                            <option value="1000-5000">$1,000 - $5,000</option>
+                            <option value="5000+">$5,000+</option>
+                        </select>
+                    </div>
+                    
+                    <button class="clear-filters-btn" onclick="clearFilters()">
+                        <i class="fas fa-times"></i> Clear Filters
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading indicator -->
+        <div class="loading-indicator" id="loading-indicator" style="display: none;">
+            <div class="spinner"></div>
+            <p>Loading freelance opportunities...</p>
+        </div>
+
+        <!-- Jobs Grid -->
+        <div class="jobs-grid" id="freelance-jobs-grid">
+            <!-- Freelance jobs will be populated here -->
+        </div>
+
+        <!-- No results message -->
+        <div class="no-results" id="no-results" style="display: none;">
+            <i class="fas fa-search"></i>
+            <h3>No freelance jobs found</h3>
+            <p>Try adjusting your search criteria or check back later for new opportunities.</p>
+        </div>
+    </main>
+
+    <script src="../script.js"></script>
+    <script src="freelance-jobs.js"></script>
+</body>
+</html> 

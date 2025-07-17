@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - TalentVault</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="nav-brand">
+                    <h2><a href="../index.html" style="text-decoration: none; color: var(--primary-blue);">TalentVault</a></h2>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <div class="nav-links" id="nav-links">
+                    <a href="dashboard.html" class="active">Dashboard</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="jobs.html">Jobs</a>
+                    <a href="freelance-jobs.html">Freelance</a>
+                    <a href="skill-assessment.html">Assessment</a>
+                    <a href="profile.html" class="user-menu">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span class="user-name">Mark</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+        <div class="dashboard-header">
+            <h1>Welcome to Your Dashboard</h1>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <h3><i class="fas fa-link"></i> Connect Your Platforms</h3>
+                <p>Link your existing accounts to showcase your work</p>
+                <div class="integration-buttons">
+                    <button class="integration-btn" onclick="connectPlatform('kaggle')">
+                        <i class="fab fa-kaggle"></i>
+                        <div>
+                            <strong>Kaggle</strong>
+                            <p>Data science competitions and notebooks</p>
+                        </div>
+                        <span class="status" id="kaggle-status">Connect</span>
+                    </button>
+                    <button class="integration-btn" onclick="connectPlatform('github')">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <strong>GitHub</strong>
+                            <p>Repository management and code sharing</p>
+                        </div>
+                        <span class="status" id="github-status">Connect</span>
+                    </button>
+                    <button class="integration-btn" onclick="connectPlatform('figma')">
+                        <i class="fab fa-figma"></i>
+                        <div>
+                            <strong>Figma</strong>
+                            <p>Collaborative design tool for UI/UX work</p>
+                        </div>
+                        <span class="status" id="figma-status">Connect</span>
+                    </button>
+                    <button class="integration-btn" onclick="connectPlatform('behance')">
+                        <i class="fab fa-behance"></i>
+                        <div>
+                            <strong>Behance</strong>
+                            <p>Creative portfolios and designs</p>
+                        </div>
+                        <span class="status" id="behance-status">Connect</span>
+                    </button>
+                    
+                    <!-- More Platforms Dropdown -->
+                    <div class="more-platforms">
+                        <button class="integration-btn more-btn" onclick="toggleMorePlatforms()">
+                            <i class="fas fa-ellipsis-h"></i>
+                            <div>
+                                <strong>More</strong>
+                            </div>
+                            <span class="more-indicator">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </button>
+                        <div class="more-platforms-dropdown" id="more-platforms-dropdown">
+                            <button class="integration-btn" onclick="connectPlatform('linkedin')">
+                                <i class="fab fa-linkedin"></i>
+                                <div>
+                                    <strong>LinkedIn</strong>
+                                </div>
+                                <span class="status" id="linkedin-status">Connect</span>
+                            </button>
+                            <button class="integration-btn" onclick="connectPlatform('tableau')">
+                                <i class="fas fa-chart-bar"></i>
+                                <div>
+                                    <strong>Tableau Public</strong>
+                                </div>
+                                <span class="status" id="tableau-status">Connect</span>
+                            </button>
+                            <button class="integration-btn" onclick="connectPlatform('datastudio')">
+                                <i class="fas fa-chart-line"></i>
+                                <div>
+                                    <strong>Google Data Studio</strong>
+                                </div>
+                                <span class="status" id="datastudio-status">Connect</span>
+                            </button>
+                            <button class="integration-btn" onclick="connectPlatform('gitlab')">
+                                <i class="fab fa-gitlab"></i>
+                                <div>
+                                    <strong>GitLab</strong>
+                                </div>
+                                <span class="status" id="gitlab-status">Connect</span>
+                            </button>
+                            <button class="integration-btn" onclick="connectPlatform('stackoverflow')">
+                                <i class="fab fa-stack-overflow"></i>
+                                <div>
+                                    <strong>Stack Overflow</strong>
+                                </div>
+                                <span class="status" id="stackoverflow-status">Connect</span>
+                            </button>
+                            <button class="integration-btn" onclick="connectPlatform('hackerrank')">
+                                <i class="fas fa-code"></i>
+                                <div>
+                                    <strong>HackerRank</strong>
+                                </div>
+                                <span class="status" id="hackerrank-status">Connect</span>
+                            </button>
+                            <button class="integration-btn" onclick="connectPlatform('aws')">
+                                <i class="fab fa-aws"></i>
+                                <div>
+                                    <strong>AWS/Azure Repositories</strong>
+                                </div>
+                                <span class="status" id="aws-status">Connect</span>
+                            </button>
+                            <button class="integration-btn" onclick="connectPlatform('dribbble')">
+                                <i class="fab fa-dribbble"></i>
+                                <div>
+                                    <strong>Dribbble</strong>
+                                </div>
+                                <span class="status" id="dribbble-status">Connect</span>
+                            </button>
+                            <button class="integration-btn" onclick="connectPlatform('carbonmade')">
+                                <i class="fas fa-palette"></i>
+                                <div>
+                                    <strong>Carbonmade</strong>
+                                </div>
+                                <span class="status" id="carbonmade-status">Connect</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <h3><i class="fas fa-chart-line"></i> Your Progress</h3>
+                <p>Track your development journey and achievements</p>
+                <div class="progress-stats">
+                    <div class="stat">
+                        <h4>Portfolio Completion</h4>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 30%"></div>
+                        </div>
+                        <span>30%</span>
+                    </div>
+                    <div class="stat">
+                        <h4>Skills Verified</h4>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 10%"></div>
+                        </div>
+                        <span>1/10</span>
+                    </div>
+                    <div class="stat">
+                        <h4>Job Matches</h4>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span>0 available</span>
+                    </div>
+                    <div class="stat">
+                        <h4>Profile Views</h4>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 45%"></div>
+                        </div>
+                        <span>156 views</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions moved to middle -->
+        <div class="quick-actions">
+            <h3><i class="fas fa-bolt"></i> Quick Actions</h3>
+            <div class="actions-grid">
+                <button class="action-btn" onclick="window.location.href='portfolio.html'">
+                    <i class="fas fa-briefcase"></i>
+                    <span>View Portfolio</span>
+                </button>
+                <button class="action-btn" onclick="window.location.href='jobs.html'">
+                    <i class="fas fa-search"></i>
+                    <span>Browse Jobs</span>
+                </button>
+                <button class="action-btn" onclick="window.location.href='skill-assessment.html'">
+                    <i class="fas fa-brain"></i>
+                    <span>Take Assessment</span>
+                </button>
+                <button class="action-btn" onclick="sharePortfolio()">
+                    <i class="fas fa-share"></i>
+                    <span>Share Profile</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Section Break -->
+        <div class="section-break"></div>
+
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <h3><i class="fas fa-certificate"></i> Blockchain Verification</h3>
+                <p>Verify your credentials on the blockchain for enhanced credibility</p>
+                <div class="verification-section">
+                    <button class="btn btn-secondary btn-large" onclick="startVerification()">
+                        <i class="fas fa-shield-alt"></i> Start Verification Process
+                    </button>
+                    <div id="verification-status" class="verification-status" style="display: none;">
+                        <p><i class="fas fa-spinner fa-spin"></i> Processing verification...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <h3><i class="fas fa-chart-bar"></i> Skills Overview</h3>
+                <p>Your detected skills from connected platforms</p>
+                <div id="skills-overview" class="skills-container">
+                    <div class="skill-pill">JavaScript</div>
+                    <div class="skill-pill">Web Development</div>
+                    <div class="skill-pill">Problem Solving</div>
+                    <p class="skills-note">Connect platforms to auto-detect your skills</p>
+                </div>
+                <button class="btn-small" onclick="refreshSkills()">
+                    <i class="fas fa-sync"></i> Refresh Skills
+                </button>
+            </div>
+        </div>
+
+        <div class="dashboard-card">
+            <h3><i class="fas fa-activity"></i> Recent Activity</h3>
+            <div id="recent-activity" class="activity-feed">
+                <div class="activity-item">
+                    <i class="fas fa-plus-circle"></i>
+                    <div>
+                        <p><strong>Welcome to TalentVault!</strong></p>
+                        <small>Start by connecting your platforms to build your portfolio</small>
+                        <span class="activity-time">Just now</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <i class="fas fa-user-check"></i>
+                    <div>
+                        <p><strong>Profile Created</strong></p>
+                        <small>Your TalentVault profile is now active</small>
+                        <span class="activity-time">5 min ago</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <i class="fas fa-chart-line"></i>
+                    <div>
+                        <p><strong>Progress Tracking</strong></p>
+                        <small>Start tracking your learning progress</small>
+                        <span class="activity-time">10 min ago</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <i class="fas fa-star"></i>
+                    <div>
+                        <p><strong>Welcome Bonus</strong></p>
+                        <small>Get started with platform integrations</small>
+                        <span class="activity-time">15 min ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Notification Container -->
+    <div id="notification-container" class="notification-container"></div>
+
+    <!-- Scripts -->
+    <script src="../script.js"></script>
+    
+    <!-- Dashboard-specific functionality -->
+    <script>
+        // Dashboard-specific functions
+        function refreshSkills() {
+            const skillsContainer = document.getElementById('skills-overview');
+            
+            if (appState.userSkills && appState.userSkills.length > 0) {
+                skillsContainer.innerHTML = appState.userSkills.slice(0, 8).map(skill => 
+                    `<div class="skill-pill">${skill}</div>`
+                ).join('') + 
+                (appState.userSkills.length > 8 ? 
+                    `<div class="skill-pill more">+${appState.userSkills.length - 8} more</div>` : '');
+            } else {
+                skillsContainer.innerHTML = `
+                    <div class="skill-pill">JavaScript</div>
+                    <div class="skill-pill">Web Development</div>
+                    <div class="skill-pill">Problem Solving</div>
+                    <p class="skills-note">Connect platforms to auto-detect your skills</p>
+                `;
+            }
+            
+            showNotification('🔄 Skills refreshed!', 'info');
+        }
+
+        function updateDashboardStats() {
+            // Update portfolio completion based on connected platforms
+            const completionPercentage = Math.min((appState.connectedPlatforms.length / 4) * 100, 100);
+            const progressFill = document.querySelector('.stat:first-child .progress-fill');
+            const progressText = document.querySelector('.stat:first-child span');
+            
+            if (progressFill && progressText) {
+                progressFill.style.width = `${completionPercentage}%`;
+                progressText.textContent = `${Math.round(completionPercentage)}%`;
+            }
+
+            // Update skills count
+            const skillsCount = appState.userSkills.length;
+            const verifiedCount = Math.floor(skillsCount * 0.6); // Simulate 60% verified
+            const skillsProgressFill = document.querySelector('.stat:nth-child(2) .progress-fill');
+            const skillsProgressText = document.querySelector('.stat:nth-child(2) span');
+            
+            if (skillsProgressFill && skillsProgressText && skillsCount > 0) {
+                skillsProgressFill.style.width = `${(verifiedCount / skillsCount) * 100}%`;
+                skillsProgressText.textContent = `${verifiedCount}/${skillsCount}`;
+            }
+
+            // Update job matches
+            if (appState.currentJobs && appState.currentJobs.length > 0) {
+                const jobMatches = appState.currentJobs.filter(job => job.matchScore >= 70).length;
+                const jobProgressFill = document.querySelector('.stat:nth-child(3) .progress-fill');
+                const jobProgressText = document.querySelector('.stat:nth-child(3) span');
+                
+                if (jobProgressFill && jobProgressText) {
+                    jobProgressFill.style.width = `${Math.min((jobMatches / 10) * 100, 100)}%`;
+                    jobProgressText.textContent = `${jobMatches} available`;
+                }
+            }
+        }
+
+        function addActivityItem(type, title, description) {
+            const activityFeed = document.getElementById('recent-activity');
+            if (!activityFeed) return;
+
+            const iconMap = {
+                'connection': 'fas fa-link',
+                'verification': 'fas fa-shield-alt',
+                'skill': 'fas fa-brain',
+                'job': 'fas fa-briefcase',
+                'default': 'fas fa-info-circle'
+            };
+
+            const activityItem = document.createElement('div');
+            activityItem.className = 'activity-item';
+            activityItem.innerHTML = `
+                <i class="${iconMap[type] || iconMap.default}"></i>
+                <div>
+                    <p><strong>${title}</strong></p>
+                    <small>${description}</small>
+                    <span class="activity-time">Just now</span>
+                </div>
+            `;
+
+            // Add to top of activity feed
+            const firstActivity = activityFeed.querySelector('.activity-item');
+            if (firstActivity) {
+                activityFeed.insertBefore(activityItem, firstActivity);
+            } else {
+                activityFeed.appendChild(activityItem);
+            }
+
+            // Keep only last 5 activities
+            const activities = activityFeed.querySelectorAll('.activity-item');
+            if (activities.length > 5) {
+                activities[activities.length - 1].remove();
+            }
+        }
+
+        // Override the original connectPlatform function to add activity tracking
+        const originalConnectPlatform = window.connectPlatform;
+        window.connectPlatform = function(platform) {
+            originalConnectPlatform(platform);
+            
+            // Add activity item
+            setTimeout(() => {
+                addActivityItem('connection', 
+                    `Connected to ${platform.charAt(0).toUpperCase() + platform.slice(1)}`, 
+                    `Successfully linked your ${platform} account`);
+                updateDashboardStats();
+                refreshSkills();
+            }, 1500);
+        };
+
+        // Override skill test function to add activity tracking
+        const originalSubmitSkillTest = window.submitSkillTest;
+        window.submitSkillTest = function(skill) {
+            originalSubmitSkillTest(skill);
+            
+            setTimeout(() => {
+                addActivityItem('skill', 
+                    `Completed ${skill} Assessment`, 
+                    'Your skill has been verified and added to your profile');
+                updateDashboardStats();
+            }, 2500);
+        };
+
+        // Override verification function to add activity tracking
+        const originalStartVerification = window.startVerification;
+        window.startVerification = function() {
+            originalStartVerification();
+            
+            setTimeout(() => {
+                addActivityItem('verification', 
+                    'Blockchain Verification Complete', 
+                    'Your credentials are now blockchain-verified');
+                updateDashboardStats();
+            }, 3500);
+        };
+
+        // Initialize dashboard when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('📊 Dashboard initialized');
+            updateDashboardStats();
+            
+            // Add welcome activity if no platforms connected
+            if (appState.connectedPlatforms.length === 0) {
+                setTimeout(() => {
+                    addActivityItem('default', 
+                        'Welcome to SkillForge!', 
+                        'Start by connecting your platforms to build your portfolio');
+                }, 1000);
+            }
+        });
+
+        // Share portfolio function
+        function sharePortfolio() {
+            const portfolioUrl = `${window.location.origin}/pages/portfolio.html`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'My SkillForge Portfolio',
+                    text: 'Check out my professional portfolio with blockchain-verified skills!',
+                    url: portfolioUrl
+                }).then(() => {
+                    showNotification('📤 Portfolio shared successfully!', 'success');
+                }).catch(() => {
+                    // Fallback to clipboard
+                    copyToClipboard(portfolioUrl);
+                });
+            } else {
+                copyToClipboard(portfolioUrl);
+            }
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showNotification('📋 Portfolio link copied to clipboard!', 'success');
+            }).catch(() => {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showNotification('📋 Portfolio link copied!', 'success');
+            });
+        }
+    </script>
+</body>
+</html>

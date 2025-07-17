@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Skill Assessment - TalentVault</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="nav-brand">
+                    <h2><a href="../index.html" style="text-decoration: none; color: var(--primary-blue);">TalentVault</a></h2>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <div class="nav-links" id="nav-links">
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="jobs.html">Jobs</a>
+                    <a href="freelance-jobs.html">Freelance</a>
+                    <a href="skill-assessment.html" class="active">Assessment</a>
+                    <a href="profile.html" class="user-menu">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span class="user-name">Mark</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="skill-assessment-page">
+        <!-- Assessment Introduction -->
+        <section id="assessment-intro" class="assessment-section">
+            <div class="container">
+                <div class="assessment-header">
+                    <h1><i class="fas fa-brain"></i> AI Skill Assessment</h1>
+                    <p>Leverage AI to evaluate your technical skills and get personalized learning recommendations</p>
+                </div>
+
+                <div class="assessment-setup">
+                    <div class="setup-card">
+                        <h2>Choose Your Skills to Assess</h2>
+                        <div class="skills-selection">
+                            <div class="skill-category">
+                                <h3>Programming Languages</h3>
+                                <div class="skill-options">
+                                    <label class="skill-option">
+                                        <input type="checkbox" value="JavaScript" name="skills">
+                                        <span class="skill-label">
+                                            <i class="fab fa-js-square"></i>
+                                            JavaScript
+                                        </span>
+                                    </label>
+                                    <label class="skill-option">
+                                        <input type="checkbox" value="Python" name="skills">
+                                        <span class="skill-label">
+                                            <i class="fab fa-python"></i>
+                                            Python
+                                        </span>
+                                    </label>
+                                    <label class="skill-option">
+                                        <input type="checkbox" value="React" name="skills">
+                                        <span class="skill-label">
+                                            <i class="fab fa-react"></i>
+                                            React
+                                        </span>
+                                    </label>
+                                    <label class="skill-option">
+                                        <input type="checkbox" value="Node.js" name="skills">
+                                        <span class="skill-label">
+                                            <i class="fab fa-node-js"></i>
+                                            Node.js
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <h3>Web Technologies</h3>
+                                <div class="skill-options">
+                                    <label class="skill-option">
+                                        <input type="checkbox" value="HTML/CSS" name="skills">
+                                        <span class="skill-label">
+                                            <i class="fab fa-html5"></i>
+                                            HTML/CSS
+                                        </span>
+                                    </label>
+                                    <label class="skill-option">
+                                        <input type="checkbox" value="MongoDB" name="skills">
+                                        <span class="skill-label">
+                                            <i class="fas fa-database"></i>
+                                            MongoDB
+                                        </span>
+                                    </label>
+                                    <label class="skill-option">
+                                        <input type="checkbox" value="APIs" name="skills">
+                                        <span class="skill-label">
+                                            <i class="fas fa-plug"></i>
+                                            APIs
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <h3>Design & UX</h3>
+                                <div class="skill-options">
+                                    <label class="skill-option">
+                                        <input type="checkbox" value="UI/UX Design" name="skills">
+                                        <span class="skill-label">
+                                            <i class="fas fa-palette"></i>
+                                            UI/UX Design
+                                        </span>
+                                    </label>
+                                    <label class="skill-option">
+                                        <input type="checkbox" value="Figma" name="skills">
+                                        <span class="skill-label">
+                                            <i class="fab fa-figma"></i>
+                                            Figma
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="difficulty-selection">
+                            <h3>Select Difficulty Level</h3>
+                            <div class="difficulty-options">
+                                <label class="difficulty-option">
+                                    <input type="radio" name="difficulty" value="easy" checked>
+                                    <span class="difficulty-label">
+                                        <i class="fas fa-seedling"></i>
+                                        <strong>Beginner</strong>
+                                        <small>0-1 years experience</small>
+                                    </span>
+                                </label>
+                                <label class="difficulty-option">
+                                    <input type="radio" name="difficulty" value="medium">
+                                    <span class="difficulty-label">
+                                        <i class="fas fa-chart-line"></i>
+                                        <strong>Intermediate</strong>
+                                        <small>1-3 years experience</small>
+                                    </span>
+                                </label>
+                                <label class="difficulty-option">
+                                    <input type="radio" name="difficulty" value="hard">
+                                    <span class="difficulty-label">
+                                        <i class="fas fa-rocket"></i>
+                                        <strong>Advanced</strong>
+                                        <small>3+ years experience</small>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="assessment-info">
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>30 minutes</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-question-circle"></i>
+                                    <span>15-20 questions</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-certificate"></i>
+                                    <span>Get blockchain certificate</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary btn-large" onclick="startAssessment()">
+                            <i class="fas fa-play"></i> Start Assessment
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Assessment Quiz -->
+        <section id="assessment-quiz" class="assessment-section" style="display: none;">
+            <div class="container">
+                <div class="quiz-header">
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="quiz-progress"></div>
+                        </div>
+                        <div class="progress-text">
+                            <span id="current-question">1</span> of <span id="total-questions">15</span>
+                        </div>
+                    </div>
+                    <div class="quiz-timer">
+                        <i class="fas fa-clock"></i>
+                        <span id="timer">30:00</span>
+                    </div>
+                </div>
+
+                <div class="quiz-content">
+                    <div class="question-card">
+                        <div class="question-number">
+                            Question <span id="question-num">1</span>
+                        </div>
+                        <h2 id="question-text">Loading question...</h2>
+                        <div class="question-options" id="question-options">
+                            <!-- Options will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-actions">
+                        <button class="btn btn-outline" onclick="previousQuestion()" id="prev-btn" disabled>
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </button>
+                        <button class="btn btn-primary" onclick="nextQuestion()" id="next-btn">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Assessment Results -->
+        <section id="assessment-results" class="assessment-section" style="display: none;">
+            <div class="container">
+                <div class="results-header">
+                    <h1><i class="fas fa-trophy"></i> Assessment Complete!</h1>
+                    <p>Here's your comprehensive skill analysis</p>
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-card overall-score">
+                        <h3>Overall Score</h3>
+                        <div class="score-circle">
+                            <div class="score-number" id="overall-score">0</div>
+                            <div class="score-label">/ 100</div>
+                        </div>
+                        <div class="score-description" id="score-description">
+                            Excellent performance!
+                        </div>
+                    </div>
+
+                    <div class="result-card skill-breakdown">
+                        <h3>Skill Breakdown</h3>
+                        <div class="skill-scores" id="skill-scores">
+                            <!-- Skill scores will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="result-card recommendations">
+                        <h3>AI Recommendations</h3>
+                        <div class="recommendation-list" id="recommendations">
+                            <!-- Recommendations will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certification-section">
+                    <h2>Blockchain Certification</h2>
+                    <div class="certification-card">
+                        <div class="cert-status" id="cert-status">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Generating blockchain certificate...</span>
+                        </div>
+                        <div class="cert-details" id="cert-details" style="display: none;">
+                            <p>Your skills have been verified and recorded on the blockchain!</p>
+                            <div class="blockchain-info">
+                                <div class="info-item">
+                                    <strong>Transaction Hash:</strong>
+                                    <span id="tx-hash">0x...</span>
+                                </div>
+                                <div class="info-item">
+                                    <strong>Block Number:</strong>
+                                    <span id="block-number">...</span>
+                                </div>
+                                <div class="info-item">
+                                    <strong>Verification Time:</strong>
+                                    <span id="verification-time">...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-actions">
+                    <button class="btn btn-secondary" onclick="retakeAssessment()">
+                        <i class="fas fa-redo"></i> Retake Assessment
+                    </button>
+                    <button class="btn btn-primary" onclick="shareResults()">
+                        <i class="fas fa-share"></i> Share Results
+                    </button>
+                    <button class="btn btn-primary" onclick="goToDashboard()">
+                        <i class="fas fa-home"></i> Back to Dashboard
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../script.js"></script>
+    <script src="skill-assessment.js?v=4.0"></script>
+</body>
+</html> 
